@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<!-- SQL Mapper 작성방법 참고
+	: https://atoz-develop.tistory.com/entry/MyBatis-%EC%84%A4%EC%A0%95-%ED%8C%8C%EC%9D%BC-SQL-Mapper-%EC%9E%91%EC%84%B1-%EB%B0%A9%EB%B2%95
+	 -->
+<mapper namespace = "com.kook.spjpj.dao.Dao">
+<!-- <mapper>의 namespace 속성은 자바의 패키지처럼 여러개의 SQL문을 묶는 용도. -->
+
+
+	<!-- join -->
+	<insert id="join" parameterType="com.kook.spjpj.dto.JoinDto">
+	<!-- id: 각 SQL문을 구분 -->
+	<!-- parameterType: 이 속성에 지정한 객체의 프로퍼티값이 SQL문의 입력 파라미터에 지정된다. -->
+	<!-- MyBatis에서는 입력 파라미터를 '#{프로퍼티}'로 표시한다. -->
+		insert into USERDB(PID,PPW,PADDRESS,PHOBBY,PPROFILE) 
+		values(#{pid},#{ppw},#{pname},#{pbirth},#{pprofile})
+	</insert>
+	
+</mapper>
